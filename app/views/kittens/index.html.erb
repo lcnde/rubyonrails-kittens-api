@@ -1,4 +1,9 @@
 <h1>Homepage</h1>
+<% flash.each do |type, msg| %>
+  <div style='color: green'>
+    <%= msg %>
+  </div><br>
+<% end %>
 <%= link_to "Create new kitten", new_kitten_path %><br><br>
 <% @kitten.each do |k| %>
   <div style="font-size: 25px"><%= link_to k.name, kitten_path(k) %></div>

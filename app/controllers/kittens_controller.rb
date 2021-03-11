@@ -11,9 +11,9 @@ class KittensController < ApplicationController
   def create
     @kitten = Kitten.new(kitten_params)
     if @kitten.save
-      redirect_to @kitten
+      redirect_to @kitten, notice: 'Kitten created successfully.'
     else
-      render :new
+      redirect_to new_kitten_path, alert: 'Kitten creation failed.'
     end
   end
 
@@ -28,9 +28,9 @@ class KittensController < ApplicationController
   def update
     @kitten = Kitten.find(params[:id])
     if @kitten.update(kitten_params)
-      redirect_to @kitten
+      redirect_to @kitten, notice: 'Kitten updated successfully.'
     else
-      render :edit
+      redirect_to edit_kitten_path, alert: 'Kitten update failed.'
     end
   end
 
@@ -38,7 +38,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.find(params[:id])
     @kitten.destroy
 
-    redirect_to root_path
+    redirect_to root_path, notice: "Kitten deleted, how could you do that ;("
   end
 
   private

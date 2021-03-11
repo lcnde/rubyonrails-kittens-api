@@ -1,3 +1,8 @@
 <h1>Create new kitten</h1>
+<% flash.each do |type, msg| %>
+  <div style='color: red'>
+    <%= msg %>
+  </div>
+<% end %><br>
 <%= render 'form' %><br><br>
 <%= link_to 'Homepage', root_path %>

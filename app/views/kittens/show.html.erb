@@ -1,5 +1,9 @@
 <h1><%= @kitten.name %> profile</h1>
-
+<% flash.each do |type, msg| %>
+  <div style='color: green'>
+    <%= msg %>
+  </div>
+<% end %><br>
 <div>
   Age: <%= @kitten.age %> |
   Cuteness: <%= @kitten.cuteness %> |
