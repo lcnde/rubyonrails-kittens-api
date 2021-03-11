@@ -1,0 +1,11 @@
+<h1>Homepage</h1>
+<% @kitten.each do |k| %>
+  <div style="font-size: 25px"><%= link_to k.name, kitten_path(k) %></div>
+  <div>
+    Age: <%= k.age %> |
+    Cuteness: <%= k.cuteness %> |
+    Softness: <%= k.softness %> |
+    <%= link_to 'Delete', kitten_path(k), method: :delete %>
+  </div>
+  <br>
+<% end %>
